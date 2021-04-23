@@ -1,0 +1,128 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #2f3640;
+  width: 400px;
+  height: 150px;
+}
+
+.heading {
+  text-align: center;
+  color: #e1b12c;
+  font-size: 30px;
+}
+
+.formContainer {
+  height: 100px;
+  text-align: center;
+}
+
+input[type="text"] {
+  -webkit-appearance: none;
+}
+
+#showWeather, #celsiusBtn, #fahrenheitBtn, #kelvinBtn , input[type="text"] {
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+}
+
+input[type="text"] {
+  text-align: center;
+  font-size: 18px;
+  height: 10px;
+  width: 200px;
+  padding: 5px 5px 10px;
+  color: #f1f2f6;
+  border-bottom: 1px solid white;
+}
+
+input[type="text"]::placeholder {
+  color: #f1f2f6; 
+  text-align: left;
+}
+
+button {
+  cursor:pointer ;
+}
+
+#showWeather {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background: #f1f2f6;
+  transition: 0.3s ease-in-out;
+}
+
+#showWeather:hover {
+  background: #718093;
+  color: white;
+}
+
+#weatherData {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f1f2f6;
+  height: 100px;
+  width: 350px;
+  border-radius: 50px;
+}
+
+#weatherData h1 {
+  padding-top: 5px;
+  font-size: 32px;
+  text-align: center;
+  color: #353b48;
+}
+
+#weatherDescription {
+  font-size: 18px;
+  float: left;
+  padding-left: 40px;
+  color: #7f8fa6;
+}
+
+#weatherTemperature {
+  float: right;
+  font-size: 18px;
+  padding-right: 40px;
+  color: #7f8fa6;
+}
+
+#errorMessage {
+  color: #f5f6fa;
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+}
+
+#load {
+  color: #f5f6fa;
+  font-size: 15px;
+  text-align: center;
+}
+
+#temperatureBtn {
+  text-align: center;
+  padding-top: 20px;
+}
+
+#celsiusBtn, #fahrenheitBtn, #kelvinBtn {
+  font-weight: bold;
+  font-size: 12px;
+  padding: 10px 15px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background: #718093;
+  transition: 0.15s ease-in-out;
+  color: #f1f2f6;
+}
+
+#celsiusBtn:hover, #fahrenheitBtn:hover, #kelvinBtn:hover {
+  background: #f1f2f6;
+  color: black;
+}

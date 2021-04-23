@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello World</title>
+        <script src="jquery-3.6.0.min.js"></script>
+        <script src="popup.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <section class="main">
+            <h1 class="heading">Weather Application</h1>
+            <section class="formContainer">
+                <input id="city" type="text" placeholder="Search for a city" autofocus> <br>
+                <button id="showWeather" type="submit">Show Weather</button>
+            </section>
+        </section>
+        <div id="load" style="display: none;">Loading...</div>
+        <h1 id="errorMessage" style="display: none;">Please Enter Valid City Name</h1>
+        <div id="weatherData" style="display: none;">
+            <h1 id="weatherCity"></h1>
+            <div id="weatherDescription"></div>
+            <div id="weatherTemperature"></div>
+        </div> 
+        <div id="temperatureBtn" style="display: none;">
+            <button id='celsiusBtn'>Celsius</button>
+            <button id='fahrenheitBtn'>Fahrenheit</button>
+            <button id='kelvinBtn'>Kelvin</button>
+        </div>
+    </body>
+</html>
