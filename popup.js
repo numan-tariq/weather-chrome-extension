@@ -8,15 +8,12 @@ $(document).ready(function() {
 
             $('#errorMessage').css("display", "none");
 
-            let http = new XMLHttpRequest();
-            const method = 'GET';
             const apiKey = 'de84ad524245599125c451f567500c4e';
-            const URL = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=matric&appid=' + apiKey;
-
-            http.open(method, URL);
-            http.onreadystatechange = function() {
-                if(http.readyState === XMLHttpRequest.DONE && http.status === 200) {
-                    let data = JSON.parse(http.responseText);
+            $.ajax({
+                url: 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=matric&appid=' + apiKey,
+                type: "GET",
+                success: function(data) {
+                    console.log(data);
                     $("#city").val("");
                     $('#weatherData').slideDown();
                     $('body').css('height', '300px');
@@ -25,6 +22,7 @@ $(document).ready(function() {
                     $('#load').css("display", "none");
 
                     $("#weatherCity").text(data.name);
+                    $("#weatherCountry").text(data.sys.country);
                     $("#weatherDescription").text(data.weather[0].description.toUpperCase());
                     let temp = data.main.temp;
                     $("#weatherTemperature").text((temp-273.15).toFixed(2) + ' C');
@@ -38,8 +36,8 @@ $(document).ready(function() {
                         $("#weatherTemperature").text(temp.toFixed(2)+ ' K');
                     })
                     $("#city").val("");
-                } else if(http.readyState === XMLHttpRequest.DONE && http.status !== 200) {
-                    
+                },
+                error: function(error) {
                     $('#load').css("display", "none");
                     $('#errorMessage').css("display", "block");
                     $('#weatherData').css("display", "none");
@@ -47,8 +45,7 @@ $(document).ready(function() {
                     $('body').css('height', '250px');
                     $('#weatherData').slideUp();
                 }
-            };
-            http.send();
+            });
         } else {
             $('#load').css("display", "none");
             $('#errorMessage').css("display", "block");
